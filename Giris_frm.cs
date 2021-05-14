@@ -38,8 +38,8 @@ namespace Proje_Ödevi
                 if(oku["KullaniciAdi"].ToString()== kullacini_txt.Text && oku["Parola"].ToString()== sifre_txt.Text && oku["Yetki"].ToString() =="Admin")
                 {
                     giris = true;
-                    admin_frm admin_sayfa = new admin_frm();
-                    admin_sayfa.Show();
+                    admin_frm admin_ana = new admin_frm();
+                    admin_ana.Show();
                     this.Hide();
                     break;
                 }
@@ -68,6 +68,11 @@ namespace Proje_Ödevi
             
             
             
+        }
+
+        private void Giris_frm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

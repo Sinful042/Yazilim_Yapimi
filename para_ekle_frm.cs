@@ -46,6 +46,12 @@ namespace Proje_Ödevi
             komut.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Para İsteme Alınmıştır","Tamam");
+            this.Hide();
+
+        }
+
+        private void para_ekle_frm_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -41,6 +41,7 @@
             this.cikiskayit = new System.Windows.Forms.Button();
             this.gerikayit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.sifretekrar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // kayit_btn
@@ -61,7 +62,7 @@
             this.ad.BackColor = System.Drawing.SystemColors.Window;
             this.ad.Font = new System.Drawing.Font("Book Antiqua", 12F);
             this.ad.ForeColor = System.Drawing.Color.Silver;
-            this.ad.Location = new System.Drawing.Point(156, 65);
+            this.ad.Location = new System.Drawing.Point(156, 57);
             this.ad.Name = "ad";
             this.ad.Size = new System.Drawing.Size(200, 27);
             this.ad.TabIndex = 9;
@@ -73,7 +74,7 @@
             // 
             this.soyad.Font = new System.Drawing.Font("Book Antiqua", 12F);
             this.soyad.ForeColor = System.Drawing.Color.Silver;
-            this.soyad.Location = new System.Drawing.Point(156, 102);
+            this.soyad.Location = new System.Drawing.Point(156, 93);
             this.soyad.Name = "soyad";
             this.soyad.Size = new System.Drawing.Size(200, 27);
             this.soyad.TabIndex = 10;
@@ -85,7 +86,7 @@
             // 
             this.kullanici_adi.Font = new System.Drawing.Font("Book Antiqua", 12F);
             this.kullanici_adi.ForeColor = System.Drawing.Color.Silver;
-            this.kullanici_adi.Location = new System.Drawing.Point(156, 139);
+            this.kullanici_adi.Location = new System.Drawing.Point(156, 127);
             this.kullanici_adi.Name = "kullanici_adi";
             this.kullanici_adi.Size = new System.Drawing.Size(200, 27);
             this.kullanici_adi.TabIndex = 11;
@@ -97,7 +98,7 @@
             // 
             this.email.Font = new System.Drawing.Font("Book Antiqua", 12F);
             this.email.ForeColor = System.Drawing.Color.Silver;
-            this.email.Location = new System.Drawing.Point(156, 252);
+            this.email.Location = new System.Drawing.Point(156, 265);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(200, 27);
             this.email.TabIndex = 13;
@@ -109,7 +110,7 @@
             // 
             this.telefon.Font = new System.Drawing.Font("Book Antiqua", 12F);
             this.telefon.ForeColor = System.Drawing.Color.Silver;
-            this.telefon.Location = new System.Drawing.Point(156, 335);
+            this.telefon.Location = new System.Drawing.Point(156, 345);
             this.telefon.Name = "telefon";
             this.telefon.Size = new System.Drawing.Size(200, 27);
             this.telefon.TabIndex = 14;
@@ -121,7 +122,7 @@
             // 
             this.sifre.Font = new System.Drawing.Font("Book Antiqua", 12F);
             this.sifre.ForeColor = System.Drawing.Color.Silver;
-            this.sifre.Location = new System.Drawing.Point(156, 176);
+            this.sifre.Location = new System.Drawing.Point(156, 161);
             this.sifre.Name = "sifre";
             this.sifre.Size = new System.Drawing.Size(200, 27);
             this.sifre.TabIndex = 15;
@@ -133,7 +134,7 @@
             // 
             this.tc.Font = new System.Drawing.Font("Book Antiqua", 12F);
             this.tc.ForeColor = System.Drawing.Color.Silver;
-            this.tc.Location = new System.Drawing.Point(156, 215);
+            this.tc.Location = new System.Drawing.Point(156, 229);
             this.tc.MaxLength = 11;
             this.tc.Name = "tc";
             this.tc.Size = new System.Drawing.Size(200, 27);
@@ -146,7 +147,7 @@
             // 
             this.adres.Font = new System.Drawing.Font("Book Antiqua", 12F);
             this.adres.ForeColor = System.Drawing.Color.Silver;
-            this.adres.Location = new System.Drawing.Point(156, 294);
+            this.adres.Location = new System.Drawing.Point(156, 307);
             this.adres.Name = "adres";
             this.adres.Size = new System.Drawing.Size(200, 27);
             this.adres.TabIndex = 17;
@@ -158,6 +159,7 @@
             // 
             this.cikiskayit.BackColor = System.Drawing.Color.Transparent;
             this.cikiskayit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cikiskayit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cikiskayit.Font = new System.Drawing.Font("Forte", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cikiskayit.ForeColor = System.Drawing.Color.Brown;
             this.cikiskayit.Location = new System.Drawing.Point(468, -2);
@@ -193,12 +195,25 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Üye Ol";
             // 
+            // sifretekrar
+            // 
+            this.sifretekrar.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.sifretekrar.ForeColor = System.Drawing.Color.Silver;
+            this.sifretekrar.Location = new System.Drawing.Point(156, 194);
+            this.sifretekrar.Name = "sifretekrar";
+            this.sifretekrar.Size = new System.Drawing.Size(200, 27);
+            this.sifretekrar.TabIndex = 21;
+            this.sifretekrar.Text = "Parola-Tekrar";
+            this.sifretekrar.Enter += new System.EventHandler(this.sifretekrar_Enter);
+            this.sifretekrar.Leave += new System.EventHandler(this.sifretekrar_Leave);
+            // 
             // kayit_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(498, 473);
+            this.Controls.Add(this.sifretekrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gerikayit);
             this.Controls.Add(this.cikiskayit);
@@ -234,5 +249,6 @@
         private System.Windows.Forms.Button cikiskayit;
         private System.Windows.Forms.Button gerikayit;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox sifretekrar;
     }
 }

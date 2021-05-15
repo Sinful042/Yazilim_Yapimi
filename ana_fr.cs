@@ -40,7 +40,7 @@ namespace Proje_Ödevi
         {
             baglanti.Open();
             OleDbDataAdapter liste = new OleDbDataAdapter("select UrunKod,Urunkg from kUrun where KullaniciU = '"+Kullanici_adi+"'", baglanti);
-            liste.Fill(tablo);
+          //  liste.Fill(tablo); //yeni kullanıcının Kurun'de verisi olmadıgı icin hata veriyor oraya ya insert yap
             dataGridView1.DataSource = tablo;
             baglanti.Close();
 
@@ -66,6 +66,11 @@ namespace Proje_Ödevi
         private void cikisanasayfa_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void kullanici_lbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

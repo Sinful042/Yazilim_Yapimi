@@ -61,18 +61,31 @@ namespace Proje_Ödevi
                     baglanti.Close();
                     break;
                 }
+
+            }
+            if(sifre.Text!=sifretekrar.Text)
+            {
+
+                MessageBox.Show("Sifreler aynı degil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                baglanti.Close();
+
+            }
+            else
+                    {
+                if (kayit_yapildi && kullani_adi_yok)
+                {
+                    baglanti.Open();
+                    OleDbCommand komut = new OleDbCommand("insert into Kullanici(Ad,Soyad,KullaniciAdi,Parola,Parolatekrar,TC,ePosta,Adres,Telefon) values('" + ad.Text + "','" + soyad.Text + "','" + kullanici_adi.Text + "','" + sifre.Text + "','" + sifretekrar.Text + "','" + tc.Text + "','" + email.Text + "','" + adres.Text + "','" + telefon.Text + "')", baglanti);
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+                    Giris_frm giris = new Giris_frm();
+                    giris.Show();
+                    this.Hide();
+                }
+
             }
             
-            if (kayit_yapildi && kullani_adi_yok)
-            {
-                baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("insert into Kullanici(Ad,Soyad,KullaniciAdi,Parola,TC,ePosta,Adres,Telefon) values('" + ad.Text + "','" + soyad.Text + "','" + kullanici_adi.Text + "','" + sifre.Text + "','" + tc.Text + "','" + email.Text + "','" + adres.Text + "','" + telefon.Text + "')", baglanti);
-                komut.ExecuteNonQuery();
-                baglanti.Close();
-                Giris_frm giris = new Giris_frm();
-                giris.Show();
-                this.Hide();
-            }
+            
             
 
 
@@ -238,6 +251,28 @@ namespace Proje_Ödevi
         {
             Giris_frm giris = new Giris_frm();
             giris.Show();
+            this.Hide();
+        }
+
+        private void sifretekrar_Enter(object sender, EventArgs e)
+        {
+            if (sifretekrar.Text == "Parola-Tekrar")
+            {
+                sifretekrar.Text = "";
+                sifretekrar.PasswordChar = '*';
+                sifretekrar.ForeColor = Color.Black;
+            }
+        }
+        char? passwordtekrarkayit = null;
+        private void sifretekrar_Leave(object sender, EventArgs e)
+        {
+            if (sifretekrar.Text == "")
+            {
+
+                sifretekrar.Text = "Parola-Tekrar";
+                sifretekrar.PasswordChar = Convert.ToChar(passwordtekrarkayit);
+                sifretekrar.ForeColor = Color.Silver;
+            }
         }
     }
 }

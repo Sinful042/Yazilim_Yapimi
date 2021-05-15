@@ -41,3 +41,4 @@ C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje_Ödevi.Properties.Re
 C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje Ödevi.csproj.GenerateResource.cache
 C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje Ödevi.exe
 C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje Ödevi.pdb
+C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje_Ödevi.urn_ist_frm.resources

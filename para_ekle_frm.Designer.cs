@@ -69,6 +69,7 @@
             // 
             this.cikisparaekle.BackColor = System.Drawing.Color.Transparent;
             this.cikisparaekle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cikisparaekle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cikisparaekle.Font = new System.Drawing.Font("Forte", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cikisparaekle.ForeColor = System.Drawing.Color.Brown;
             this.cikisparaekle.Location = new System.Drawing.Point(226, -2);

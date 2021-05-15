@@ -104,6 +104,7 @@
             // 
             this.cikisgiris.BackColor = System.Drawing.Color.Transparent;
             this.cikisgiris.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cikisgiris.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cikisgiris.Font = new System.Drawing.Font("Forte", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cikisgiris.ForeColor = System.Drawing.Color.Brown;
             this.cikisgiris.Location = new System.Drawing.Point(468, -2);

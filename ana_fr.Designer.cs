@@ -52,6 +52,7 @@
             this.kullanici_lbl.Size = new System.Drawing.Size(126, 24);
             this.kullanici_lbl.TabIndex = 0;
             this.kullanici_lbl.Text = "Kullanıcı Adı";
+            this.kullanici_lbl.Click += new System.EventHandler(this.kullanici_lbl_Click);
             // 
             // para_lbl
             // 
@@ -153,6 +154,7 @@
             // 
             this.cikisanasayfa.BackColor = System.Drawing.Color.Transparent;
             this.cikisanasayfa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cikisanasayfa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cikisanasayfa.Font = new System.Drawing.Font("Forte", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cikisanasayfa.ForeColor = System.Drawing.Color.Brown;
             this.cikisanasayfa.Location = new System.Drawing.Point(744, -3);

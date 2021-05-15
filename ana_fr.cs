@@ -52,5 +52,20 @@ namespace Proje_Ödevi
             para_ekle.kullanici_adi = Kullanici_adi;
             para_ekle.ShowDialog();
         }
+
+        private void para_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cikisanasayfa_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -74,5 +74,49 @@ namespace Proje_Ödevi
         {
 
         }
+
+        private void kullacini_txt_Enter(object sender, EventArgs e)
+        {
+            if(kullacini_txt.Text=="Kullanıcı-Adı")
+            {
+                kullacini_txt.Text = "";
+                kullacini_txt.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void kullacini_txt_Leave(object sender, EventArgs e)
+        {
+            if (kullacini_txt.Text == "")
+            {
+                kullacini_txt.Text = "Kullanıcı-Adı";
+                kullacini_txt.ForeColor = Color.Silver;
+            }
+        }
+
+        private void sifre_txt_Enter(object sender, EventArgs e)
+        {
+            if (sifre_txt.Text == "Parola")
+            {
+                sifre_txt.Text = "";
+                sifre_txt.PasswordChar = '*';
+                sifre_txt.ForeColor = Color.Black;
+            }
+        }
+        char? passwordgiris = null;
+        private void sifre_txt_Leave(object sender, EventArgs e)
+        {
+            if (sifre_txt.Text == "")
+            {
+                sifre_txt.Text = "Parola";
+                sifre_txt.PasswordChar =Convert.ToChar(passwordgiris);
+                sifre_txt.ForeColor = Color.Silver;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

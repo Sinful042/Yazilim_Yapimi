@@ -98,6 +98,7 @@
             this.dataGridViewSo.Name = "dataGridViewSo";
             this.dataGridViewSo.Size = new System.Drawing.Size(715, 226);
             this.dataGridViewSo.TabIndex = 16;
+            this.dataGridViewSo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSo_CellContentClick);
             // 
             // admin_lbl
             // 

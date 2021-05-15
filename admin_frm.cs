@@ -56,6 +56,10 @@ namespace Proje_Ödevi
         {
 
         }
-       
+
+        private void dataGridViewSo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

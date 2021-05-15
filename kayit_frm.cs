@@ -251,6 +251,7 @@ namespace Proje_Ödevi
         {
             Giris_frm giris = new Giris_frm();
             giris.Show();
+            this.Hide();
         }
 
         private void sifretekrar_Enter(object sender, EventArgs e)

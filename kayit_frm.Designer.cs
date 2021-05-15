@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kayit_frm));
             this.kayit_btn = new System.Windows.Forms.Button();
             this.ad = new System.Windows.Forms.TextBox();
             this.soyad = new System.Windows.Forms.TextBox();
@@ -45,160 +38,170 @@
             this.sifre = new System.Windows.Forms.TextBox();
             this.tc = new System.Windows.Forms.TextBox();
             this.adres = new System.Windows.Forms.TextBox();
+            this.cikiskayit = new System.Windows.Forms.Button();
+            this.gerikayit = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(101, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ad:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(19, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Kullanıcı Adı:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(69, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Soyad:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(86, 197);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Şifre:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(66, 425);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Telefon";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(77, 311);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 25);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "E-mail";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(74, 368);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 25);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Adres:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(11, 254);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 25);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "TC Kimlik No:";
             // 
             // kayit_btn
             // 
-            this.kayit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kayit_btn.Location = new System.Drawing.Point(468, 454);
+            this.kayit_btn.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.kayit_btn.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
+            this.kayit_btn.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.kayit_btn.Location = new System.Drawing.Point(357, 383);
             this.kayit_btn.Name = "kayit_btn";
             this.kayit_btn.Size = new System.Drawing.Size(122, 39);
             this.kayit_btn.TabIndex = 8;
             this.kayit_btn.Text = "Kayıt Ol";
-            this.kayit_btn.UseVisualStyleBackColor = true;
+            this.kayit_btn.UseVisualStyleBackColor = false;
             this.kayit_btn.Click += new System.EventHandler(this.kayit_btn_Click);
             // 
             // ad
             // 
-            this.ad.Location = new System.Drawing.Point(196, 25);
+            this.ad.BackColor = System.Drawing.SystemColors.Window;
+            this.ad.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.ad.ForeColor = System.Drawing.Color.Silver;
+            this.ad.Location = new System.Drawing.Point(156, 65);
             this.ad.Name = "ad";
-            this.ad.Size = new System.Drawing.Size(200, 20);
+            this.ad.Size = new System.Drawing.Size(200, 27);
             this.ad.TabIndex = 9;
+            this.ad.Text = "Ad";
+            this.ad.Enter += new System.EventHandler(this.ad_Enter);
+            this.ad.Leave += new System.EventHandler(this.ad_Leave);
             // 
             // soyad
             // 
-            this.soyad.Location = new System.Drawing.Point(196, 89);
+            this.soyad.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.soyad.ForeColor = System.Drawing.Color.Silver;
+            this.soyad.Location = new System.Drawing.Point(156, 102);
             this.soyad.Name = "soyad";
-            this.soyad.Size = new System.Drawing.Size(200, 20);
+            this.soyad.Size = new System.Drawing.Size(200, 27);
             this.soyad.TabIndex = 10;
+            this.soyad.Text = "Soyad";
+            this.soyad.Enter += new System.EventHandler(this.soyad_Enter);
+            this.soyad.Leave += new System.EventHandler(this.soyad_Leave);
             // 
             // kullanici_adi
             // 
-            this.kullanici_adi.Location = new System.Drawing.Point(196, 146);
+            this.kullanici_adi.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.kullanici_adi.ForeColor = System.Drawing.Color.Silver;
+            this.kullanici_adi.Location = new System.Drawing.Point(156, 139);
             this.kullanici_adi.Name = "kullanici_adi";
-            this.kullanici_adi.Size = new System.Drawing.Size(200, 20);
+            this.kullanici_adi.Size = new System.Drawing.Size(200, 27);
             this.kullanici_adi.TabIndex = 11;
+            this.kullanici_adi.Text = "Kullanıcı-Adı";
+            this.kullanici_adi.Enter += new System.EventHandler(this.kullanici_adi_Enter);
+            this.kullanici_adi.Leave += new System.EventHandler(this.kullanici_adi_Leave);
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(196, 316);
+            this.email.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.email.ForeColor = System.Drawing.Color.Silver;
+            this.email.Location = new System.Drawing.Point(156, 252);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(200, 20);
+            this.email.Size = new System.Drawing.Size(200, 27);
             this.email.TabIndex = 13;
+            this.email.Text = "E-mail";
+            this.email.Enter += new System.EventHandler(this.email_Enter);
+            this.email.Leave += new System.EventHandler(this.email_Leave);
             // 
             // telefon
             // 
-            this.telefon.Location = new System.Drawing.Point(196, 425);
+            this.telefon.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.telefon.ForeColor = System.Drawing.Color.Silver;
+            this.telefon.Location = new System.Drawing.Point(156, 335);
             this.telefon.Name = "telefon";
-            this.telefon.Size = new System.Drawing.Size(200, 20);
+            this.telefon.Size = new System.Drawing.Size(200, 27);
             this.telefon.TabIndex = 14;
+            this.telefon.Text = "Telefon";
+            this.telefon.Enter += new System.EventHandler(this.telefon_Enter);
+            this.telefon.Leave += new System.EventHandler(this.telefon_Leave);
             // 
             // sifre
             // 
-            this.sifre.Location = new System.Drawing.Point(196, 203);
+            this.sifre.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.sifre.ForeColor = System.Drawing.Color.Silver;
+            this.sifre.Location = new System.Drawing.Point(156, 176);
             this.sifre.Name = "sifre";
-            this.sifre.Size = new System.Drawing.Size(200, 20);
+            this.sifre.Size = new System.Drawing.Size(200, 27);
             this.sifre.TabIndex = 15;
+            this.sifre.Text = "Parola";
+            this.sifre.Enter += new System.EventHandler(this.sifre_Enter);
+            this.sifre.Leave += new System.EventHandler(this.sifre_Leave);
             // 
             // tc
             // 
-            this.tc.Location = new System.Drawing.Point(196, 260);
+            this.tc.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.tc.ForeColor = System.Drawing.Color.Silver;
+            this.tc.Location = new System.Drawing.Point(156, 215);
+            this.tc.MaxLength = 11;
             this.tc.Name = "tc";
-            this.tc.Size = new System.Drawing.Size(200, 20);
+            this.tc.Size = new System.Drawing.Size(200, 27);
             this.tc.TabIndex = 16;
+            this.tc.Text = "TC";
+            this.tc.Enter += new System.EventHandler(this.tc_Enter);
+            this.tc.Leave += new System.EventHandler(this.tc_Leave);
             // 
             // adres
             // 
-            this.adres.Location = new System.Drawing.Point(196, 374);
+            this.adres.Font = new System.Drawing.Font("Book Antiqua", 12F);
+            this.adres.ForeColor = System.Drawing.Color.Silver;
+            this.adres.Location = new System.Drawing.Point(156, 294);
             this.adres.Name = "adres";
-            this.adres.Size = new System.Drawing.Size(200, 20);
+            this.adres.Size = new System.Drawing.Size(200, 27);
             this.adres.TabIndex = 17;
+            this.adres.Text = "Adres";
+            this.adres.Enter += new System.EventHandler(this.adres_Enter);
+            this.adres.Leave += new System.EventHandler(this.adres_Leave);
+            // 
+            // cikiskayit
+            // 
+            this.cikiskayit.BackColor = System.Drawing.Color.Transparent;
+            this.cikiskayit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cikiskayit.Font = new System.Drawing.Font("Forte", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cikiskayit.ForeColor = System.Drawing.Color.Brown;
+            this.cikiskayit.Location = new System.Drawing.Point(468, -2);
+            this.cikiskayit.Name = "cikiskayit";
+            this.cikiskayit.Size = new System.Drawing.Size(32, 36);
+            this.cikiskayit.TabIndex = 18;
+            this.cikiskayit.Text = "X";
+            this.cikiskayit.UseVisualStyleBackColor = false;
+            this.cikiskayit.Click += new System.EventHandler(this.cikiskayit_Click);
+            // 
+            // gerikayit
+            // 
+            this.gerikayit.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gerikayit.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
+            this.gerikayit.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.gerikayit.Location = new System.Drawing.Point(12, 383);
+            this.gerikayit.Name = "gerikayit";
+            this.gerikayit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gerikayit.Size = new System.Drawing.Size(122, 39);
+            this.gerikayit.TabIndex = 19;
+            this.gerikayit.Text = "Geri";
+            this.gerikayit.UseVisualStyleBackColor = false;
+            this.gerikayit.Click += new System.EventHandler(this.gerikayit_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(161, -2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(182, 57);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Üye Ol";
             // 
             // kayit_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 505);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(498, 473);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.gerikayit);
+            this.Controls.Add(this.cikiskayit);
             this.Controls.Add(this.adres);
             this.Controls.Add(this.tc);
             this.Controls.Add(this.sifre);
@@ -208,14 +211,8 @@
             this.Controls.Add(this.soyad);
             this.Controls.Add(this.ad);
             this.Controls.Add(this.kayit_btn);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "kayit_frm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kayıt Ol";
@@ -225,15 +222,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button kayit_btn;
         private System.Windows.Forms.TextBox ad;
         private System.Windows.Forms.TextBox soyad;
@@ -243,5 +231,8 @@
         private System.Windows.Forms.TextBox sifre;
         private System.Windows.Forms.TextBox tc;
         private System.Windows.Forms.TextBox adres;
+        private System.Windows.Forms.Button cikiskayit;
+        private System.Windows.Forms.Button gerikayit;
+        private System.Windows.Forms.Label label2;
     }
 }

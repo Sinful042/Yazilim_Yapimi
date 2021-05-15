@@ -29,8 +29,8 @@ namespace Proje_Ödevi
         DataTable tablo = new DataTable();
         private void cikis_btn_Click(object sender, EventArgs e)
         {
-            Giris_frm giris = new Giris_frm();
-            giris.Show();
+            admin_frm admingeri = new admin_frm();
+            admingeri.Show();
             this.Hide();
         }
 
@@ -192,6 +192,11 @@ namespace Proje_Ödevi
                 filitre = "Bekleniyor";
                 Filitre_Liste(filitre);
             }
+        }
+
+        private void cikisanasayfa_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

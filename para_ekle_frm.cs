@@ -54,5 +54,12 @@ namespace Proje_Ödevi
         {
 
         }
+
+        private void cikisparaekle_Click(object sender, EventArgs e)
+        {
+            ana_fr anasayfa = new ana_fr();
+            anasayfa.Show();
+            this.Hide();
+        }
     }
 }

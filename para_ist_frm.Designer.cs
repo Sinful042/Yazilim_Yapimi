@@ -36,7 +36,7 @@
             this.onay_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.cikisparaonay = new System.Windows.Forms.Button();
+            this.cikisanasayfa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             this.admin_label.Name = "admin_label";
             this.admin_label.Size = new System.Drawing.Size(136, 24);
             this.admin_label.TabIndex = 0;
-            this.admin_label.Text = "Para İstekleri;";
+            this.admin_label.Text = "Para İstekleri:";
             // 
             // cikis_btn
             // 
@@ -123,28 +123,30 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Filtre:";
             // 
-            // cikisparaonay
+            // cikisanasayfa
             // 
-            this.cikisparaonay.BackColor = System.Drawing.Color.Transparent;
-            this.cikisparaonay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.cikisparaonay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cikisparaonay.Font = new System.Drawing.Font("Forte", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cikisparaonay.ForeColor = System.Drawing.Color.Brown;
-            this.cikisparaonay.Location = new System.Drawing.Point(730, -5);
-            this.cikisparaonay.Name = "cikisparaonay";
-            this.cikisparaonay.Size = new System.Drawing.Size(32, 36);
-            this.cikisparaonay.TabIndex = 9;
-            this.cikisparaonay.Text = "X";
-            this.cikisparaonay.UseVisualStyleBackColor = false;
-            this.cikisparaonay.Click += new System.EventHandler(this.cikisanasayfa_Click);
+            this.cikisanasayfa.BackColor = System.Drawing.Color.Transparent;
+            this.cikisanasayfa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cikisanasayfa.FlatAppearance.BorderSize = 0;
+            this.cikisanasayfa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cikisanasayfa.Font = new System.Drawing.Font("Forte", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cikisanasayfa.ForeColor = System.Drawing.Color.Brown;
+            this.cikisanasayfa.Location = new System.Drawing.Point(730, -5);
+            this.cikisanasayfa.Name = "cikisanasayfa";
+            this.cikisanasayfa.Size = new System.Drawing.Size(32, 36);
+            this.cikisanasayfa.TabIndex = 9;
+            this.cikisanasayfa.Text = "X";
+            this.cikisanasayfa.UseVisualStyleBackColor = false;
+            this.cikisanasayfa.Click += new System.EventHandler(this.cikisanasayfa_Click);
             // 
             // para_ist_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(758, 402);
-            this.Controls.Add(this.cikisparaonay);
+            this.Controls.Add(this.cikisanasayfa);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.onay_btn);
@@ -173,6 +175,6 @@
         private System.Windows.Forms.Button onay_btn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button cikisparaonay;
+        private System.Windows.Forms.Button cikisanasayfa;
     }
 }

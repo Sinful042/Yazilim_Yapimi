@@ -36,6 +36,9 @@ namespace Proje_Ödevi
 
         private void admin_frm_Load(object sender, EventArgs e)
         {
+            baglanti.Open();
+            OleDbDataAdapter fiyat_liste = new OleDbDataAdapter("select  *from Satis ORDER BY UrunFiyat ASC", baglanti);
+            baglanti.Close();
             Listeleme();
 
         }
@@ -46,7 +49,9 @@ namespace Proje_Ödevi
                 liste.Fill(tablo);
                 dataGridView1.DataSource = tablo;
                 dataGridView1.ReadOnly = true;
-                baglanti.Close();
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Red;
+            baglanti.Close();
 
             
         }

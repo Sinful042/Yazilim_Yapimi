@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,24 +24,24 @@ namespace Proje_Ödevi
         {
             kayit_frm kayit = new kayit_frm();
             kayit.Show();
+
             this.Hide();
 
         }
 
         private void gris_btn_Click(object sender, EventArgs e)
         {
-            
+
             baglanti.Close();
-
-
             baglanti.Open();
-            OleDbCommand sorgu = new OleDbCommand("select *from Kullanici",baglanti);
+            OleDbCommand sorgu = new OleDbCommand("select *from Kullanici", baglanti);
             OleDbDataReader oku = sorgu.ExecuteReader();
             while (oku.Read())
             {
-                if(oku["KullaniciAdi"].ToString()== kullacini_txt.Text && oku["Parola"].ToString()== sifre_txt.Text && oku["Yetki"].ToString() =="Admin")
+                if (oku["KullaniciAdi"].ToString() == kullacini_txt.Text && oku["Parola"].ToString() == sifre_txt.Text && oku["Yetki"].ToString() == "Admin")
                 {
                     giris = true;
+
                     admin_frm admin_ana = new admin_frm();
                     admin_ana.Show();
                     this.Hide();
@@ -48,6 +49,7 @@ namespace Proje_Ödevi
                 }
                 else if (oku["KullaniciAdi"].ToString() == kullacini_txt.Text && oku["Parola"].ToString() == sifre_txt.Text && oku["Yetki"].ToString() == "Kullanici")
                 {
+
                     giris = true;
                     ana_fr ana_Sayfa = new ana_fr();
                     ana_Sayfa.Kullanici_adi = oku["KullaniciAdi"].ToString();
@@ -56,21 +58,21 @@ namespace Proje_Ödevi
                     this.Hide();
                     break;
                 }
-                
+
             }
-            if (kullacini_txt.Text == " " || sifre_txt.Text=="")
+            if (kullacini_txt.Text == " " || sifre_txt.Text == "")
             {
-                MessageBox.Show("Kullani Adi veya şifre boş geçilemez","Tamam");
+                MessageBox.Show("Kullani Adi veya şifre boş geçilemez", "Tamam");
             }
             else if (!giris)
             {
                 MessageBox.Show("Kullanici Adi veya Şifre Yanlış", "Tamam");
             }
-            
+
             baglanti.Close();
-            
-            
-            
+
+
+
         }
 
         private void Giris_frm_Load(object sender, EventArgs e)
@@ -80,7 +82,7 @@ namespace Proje_Ödevi
 
         private void kullacini_txt_Enter(object sender, EventArgs e)
         {
-            if(kullacini_txt.Text=="Kullanıcı-Adı")
+            if (kullacini_txt.Text == "Kullanıcı-Adı")
             {
                 kullacini_txt.Text = "";
                 kullacini_txt.ForeColor = Color.Black;
@@ -112,7 +114,7 @@ namespace Proje_Ödevi
             if (sifre_txt.Text == "")
             {
                 sifre_txt.Text = "Parola";
-                sifre_txt.PasswordChar =Convert.ToChar(passwordgiris);
+                sifre_txt.PasswordChar = Convert.ToChar(passwordgiris);
                 sifre_txt.ForeColor = Color.Silver;
             }
         }

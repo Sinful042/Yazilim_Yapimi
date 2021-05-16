@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,19 +20,19 @@ namespace Proje_Ödevi
         {
             InitializeComponent();
         }
-        OleDbConnection baglanti=new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=odev1234.mdb");
+        OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=odev1234.mdb");
         private void kayit_btn_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < Controls.Count; i++)
             {
                 if (Controls[i] is TextBox)
                 {
-                    if (Controls[i].Text=="Ad" || Controls[i].Text == "Soyad" || Controls[i].Text == "Kullanıcı-Adı" || Controls[i].Text == "Parola" || Controls[i].Text == "TC" || Controls[i].Text == "E-mail" || Controls[i].Text == "Adres" || Controls[i].Text == "Telefon")
+                    if (Controls[i].Text == "Ad" || Controls[i].Text == "Soyad" || Controls[i].Text == "Kullanıcı-Adı" || Controls[i].Text == "Parola" || Controls[i].Text == "TC" || Controls[i].Text == "E-mail" || Controls[i].Text == "Adres" || Controls[i].Text == "Telefon")
                     {
                         MessageBox.Show("Eksik Bilgi Girdiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         kayit_yapildi = false;
                         break;
-                        
+
 
                     }
 
@@ -40,7 +41,7 @@ namespace Proje_Ödevi
                 {
                     kayit_yapildi = true;
                 }
-                
+
             }
             baglanti.Open();
             OleDbCommand sorgu = new OleDbCommand("select *from Kullanici", baglanti);
@@ -53,7 +54,7 @@ namespace Proje_Ödevi
                     kullani_adi_yok = false;
                     baglanti.Close();
                     break;
-                    
+
                 }
                 else
                 {
@@ -87,8 +88,8 @@ namespace Proje_Ödevi
 
             }
 
-            
-            
+
+
         }
 
         private void cikiskayit_Click(object sender, EventArgs e)

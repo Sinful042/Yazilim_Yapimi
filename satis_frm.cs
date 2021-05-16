@@ -70,5 +70,11 @@ namespace Proje_Ödevi
             MessageBox.Show("Şatış Onayı Bekleniyor", "Tamam");
             this.Hide();
         }
+
+        private void cikisparaekle_Click(object sender, EventArgs e)
+        {
+            ana_fr anasayfa = new ana_fr();
+            anasayfa.Show();
+        }
     }
 }

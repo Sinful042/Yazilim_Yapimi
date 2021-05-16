@@ -19,7 +19,8 @@ namespace Proje_Ödevi
         string istek_ürün,urun_birim;
         int istek_miktar, alinan_fiyat;
         int olan_miktar,alinan_miktar;
-        
+        string filitre;
+
 
         public satin_al_frm()
         {
@@ -45,64 +46,142 @@ namespace Proje_Ödevi
         private void Listeleme()
         {
             baglanti.Open();
-            OleDbDataAdapter liste = new OleDbDataAdapter("select  *from Urunler", baglanti);
+            OleDbDataAdapter liste = new OleDbDataAdapter("select UrunAdi,UrunBirim,UrunTuru from Urunler", baglanti);
             liste.Fill(tablo);
+            
             dataGridView1.DataSource = tablo;
+
             dataGridView1.ReadOnly = true;
+            
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DarkGreen;
             baglanti.Close();
 
+        }
+
+        private void admin_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cikisanasayfa_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void filitre_liste(string UrunTuru)
+        {
+            baglanti.Open();
+            OleDbDataAdapter liste = new OleDbDataAdapter("select  UrunAdi,UrunBirim,UrunTuru from Urunler where UrunTuru = '" + UrunTuru + "'", baglanti);
+            liste.Fill(tablo);
+            dataGridView1.DataSource = tablo;
+            baglanti.Close();
+        }
+
+
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                tablo.Clear();
+                filitre = "Yiyecek";
+                filitre_liste(filitre);
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                tablo.Clear();
+                filitre = "Giysi";
+                filitre_liste(filitre);
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                tablo.Clear();
+                filitre = "Hammmadde";
+                filitre_liste(filitre);
+            }
+            else if (comboBox1.SelectedIndex == 3)
+            {
+                tablo.Clear();
+                filitre = "Kırtasiye";
+                filitre_liste(filitre);
+            }
+            else if (comboBox1.SelectedIndex == 4)
+            {
+                tablo.Clear();
+                filitre = "Elektronik";
+                filitre_liste(filitre);
+            }
+            else
+            {
+                tablo.Clear();
+                filitre = "Bekleniyor";
+                filitre_liste(filitre);
+            }
         }
 
         private void satın_al_btn_Click(object sender, EventArgs e)
         {
             harcanan_para = 0;
             alinan_miktar = 0;
-            istek_miktar = Convert.ToInt32(textBox1.Text);
-            istek_ürün = dataGridView1.CurrentRow.Cells["UrunAdi"].Value.ToString();
-            baglanti.Open();
-            OleDbCommand komut = new OleDbCommand();
-            komut.Connection = baglanti;
-            komut.CommandText = ("Select *from Satis where UrunAdi = '" + istek_ürün + "' ORDER BY UrunFiyat ASC");
-            OleDbDataReader oku = komut.ExecuteReader();
-            while (oku.Read())
-            {
-                if (istek_miktar<=Convert.ToInt32(oku["sUrunMiktar"].ToString()) && Convert.ToInt32(oku["sUrunMiktar"].ToString())>0)
-                {
-                    alinan_fiyat = Convert.ToInt32(oku["UrunFiyat"].ToString());
-                    harcanan_para = istek_miktar * alinan_fiyat;
-                    //para kontrol
-                    satici_kullanici_adi = oku["KullaniciAdi"].ToString();
-                    urun_birim = oku["UrunBirim"].ToString();
-                    Para_gonder(satici_kullanici_adi,harcanan_para);
-                    Para_cikar(alici_kullanici_adi, harcanan_para);
-                    satistan_cikar(istek_ürün, satici_kullanici_adi, istek_miktar, alinan_fiyat);
-                    istek_miktar += alinan_miktar;
-                    urun_ekle(alici_kullanici_adi,istek_miktar.ToString(),istek_ürün,urun_birim);
-                    
-                    MessageBox.Show("Satın Alım Gerçekleştirilmiştir", "Tamam");
-                    break;
-                }
-                else if (istek_miktar>Convert.ToInt32(oku["sUrunMiktar"].ToString()))
-                {
-                    alinan_miktar= Convert.ToInt32(oku["sUrunMiktar"].ToString());
-                    satici_kullanici_adi = oku["KullaniciAdi"].ToString();
-                    alinan_fiyat = Convert.ToInt32(oku["UrunFiyat"].ToString());
-                    harcanan_para+= alinan_fiyat * alinan_miktar;
-                    urun_birim = oku["UrunBirim"].ToString();
-                    Para_gonder(satici_kullanici_adi, harcanan_para);
-                    Para_cikar(alici_kullanici_adi, harcanan_para);
-                    satistan_cikar(istek_ürün, satici_kullanici_adi, alinan_miktar, alinan_fiyat);
-                    istek_miktar -= alinan_miktar;
-                    
-                    
 
-            }
+                    if (textBox1.Text == "")
+                    {
+                        MessageBox.Show("Lütfen geçerli bir sayı giriniz..", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
                 
+                else
+                {
+                    istek_miktar = Convert.ToInt32(textBox1.Text);
+                    istek_ürün = dataGridView1.CurrentRow.Cells["UrunAdi"].Value.ToString();
+                    baglanti.Open();
+                    OleDbCommand komut = new OleDbCommand();
+                    komut.Connection = baglanti;
+                    komut.CommandText = ("Select *from Satis where UrunAdi = '" + istek_ürün + "' ORDER BY UrunFiyat ASC");
+                    OleDbDataReader oku = komut.ExecuteReader();
+                    while (oku.Read())
+                    {
+                        if (istek_miktar <= Convert.ToInt32(oku["sUrunMiktar"].ToString()) && Convert.ToInt32(oku["sUrunMiktar"].ToString()) > 0)
+                        {
+                            alinan_fiyat = Convert.ToInt32(oku["UrunFiyat"].ToString());
+                            harcanan_para = istek_miktar * alinan_fiyat;
+                            //para kontrol
+                            satici_kullanici_adi = oku["KullaniciAdi"].ToString();
+                            urun_birim = oku["UrunBirim"].ToString();
+                            Para_gonder(satici_kullanici_adi, harcanan_para);
+                            Para_cikar(alici_kullanici_adi, harcanan_para);
+                            satistan_cikar(istek_ürün, satici_kullanici_adi, istek_miktar, alinan_fiyat);
+                            istek_miktar += alinan_miktar;
+                            urun_ekle(alici_kullanici_adi, istek_miktar.ToString(), istek_ürün, urun_birim);
+
+                            MessageBox.Show("Satın Alım Gerçekleştirilmiştir", "Tamam");
+                        textBox1.Clear();
+                            break;
+                        }
+                        else if (istek_miktar > Convert.ToInt32(oku["sUrunMiktar"].ToString()))
+                        {
+                            alinan_miktar = Convert.ToInt32(oku["sUrunMiktar"].ToString());
+                            satici_kullanici_adi = oku["KullaniciAdi"].ToString();
+                            alinan_fiyat = Convert.ToInt32(oku["UrunFiyat"].ToString());
+                            harcanan_para += alinan_fiyat * alinan_miktar;
+                            urun_birim = oku["UrunBirim"].ToString();
+                            Para_gonder(satici_kullanici_adi, harcanan_para);
+                            Para_cikar(alici_kullanici_adi, harcanan_para);
+                            satistan_cikar(istek_ürün, satici_kullanici_adi, alinan_miktar, alinan_fiyat);
+                            istek_miktar -= alinan_miktar;
+
+
+
+                        }
+
+
+                    }
+                    baglanti.Close();
+
 
             }
-            baglanti.Close();
-
-
         }
         private void Para_gonder(string satici_Kullanici_adi,int gelen_para)
         {

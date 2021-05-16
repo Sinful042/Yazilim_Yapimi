@@ -26,6 +26,9 @@ namespace Proje_Ödevi
         {
             kullanici_lbl.Text = Kullanici_adi;
             para_lbl.Text = Para;
+            baglanti.Open();
+            OleDbDataAdapter fiyat_liste = new OleDbDataAdapter("select  *from Satis ORDER BY UrunFiyat ASC", baglanti);
+            baglanti.Close();
             listele();
         }
 
@@ -39,7 +42,7 @@ namespace Proje_Ödevi
         public void listele()
         {
             baglanti.Open();
-            OleDbDataAdapter liste = new OleDbDataAdapter("select UrunKod,Urunkg from kUrun where KullaniciU = '"+Kullanici_adi+"'", baglanti);
+            OleDbDataAdapter liste = new OleDbDataAdapter("select UrunAdi,UrunMiktar,UrunBirim from kUrun where KullaniciU = '"+Kullanici_adi+"'", baglanti);
             liste.Fill(tablo);
             dataGridView1.DataSource = tablo;
             baglanti.Close();
@@ -66,6 +69,26 @@ namespace Proje_Ödevi
         private void cikisanasayfa_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void satis_btn_Click(object sender, EventArgs e)
+        {
+            satis_frm satis = new satis_frm();
+            satis.Kullanici_adi = Kullanici_adi;
+            satis.Urun_id = dataGridView1.CurrentRow.Cells["UrunAdi"].Value.ToString();
+            satis.ShowDialog();
+            tablo.Clear();
+            listele();
+            
+        }
+
+        private void ürün_al_btn_Click(object sender, EventArgs e)
+        {
+            satin_al_frm ürün_al = new satin_al_frm();
+            ürün_al.alici_kullanici_adi = Kullanici_adi;
+            ürün_al.para = Para;
+            ürün_al.Show();
+            this.Hide();
         }
     }
 }

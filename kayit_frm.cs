@@ -239,5 +239,10 @@ namespace Proje_Ödevi
             Giris_frm giris = new Giris_frm();
             giris.Show();
         }
+
+        private void kayit_frm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

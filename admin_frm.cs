@@ -23,5 +23,29 @@ namespace Proje_Ödevi
             admin_sayfa.Show();
             this.Hide();
         }
+
+        
+
+        
+
+        private void cikis_btn_Click(object sender, EventArgs e)
+        {
+            Giris_frm giris = new Giris_frm();
+            giris.Show();
+            this.Hide();
+
+        }
+
+        private void satis_btn_Click(object sender, EventArgs e)
+        {
+            satis_ist_frm satis = new satis_ist_frm();
+            satis.Show();
+            this.Hide();
+        }
+
+        private void admin_frm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

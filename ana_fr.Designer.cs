@@ -76,6 +76,7 @@
             this.satis_btn.TabIndex = 2;
             this.satis_btn.Text = "Satış Yap";
             this.satis_btn.UseVisualStyleBackColor = false;
+            this.satis_btn.Click += new System.EventHandler(this.satis_btn_Click);
             // 
             // ürün_al_btn
             // 
@@ -87,6 +88,7 @@
             this.ürün_al_btn.TabIndex = 3;
             this.ürün_al_btn.Text = "Ürün Al";
             this.ürün_al_btn.UseVisualStyleBackColor = false;
+            this.ürün_al_btn.Click += new System.EventHandler(this.ürün_al_btn_Click);
             // 
             // para_ekle_btn
             // 

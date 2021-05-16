@@ -29,9 +29,12 @@ namespace Proje_Ödevi
 
         private void gris_btn_Click(object sender, EventArgs e)
         {
+            
+            baglanti.Close();
+
+
             baglanti.Open();
             OleDbCommand sorgu = new OleDbCommand("select *from Kullanici",baglanti);
-            
             OleDbDataReader oku = sorgu.ExecuteReader();
             while (oku.Read())
             {
@@ -118,5 +121,6 @@ namespace Proje_Ödevi
         {
             Application.Exit();
         }
+        
     }
 }

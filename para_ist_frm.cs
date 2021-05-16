@@ -36,6 +36,9 @@ namespace Proje_Ödevi
 
         private void admin_frm_Load(object sender, EventArgs e)
         {
+            baglanti.Open();
+            OleDbDataAdapter fiyat_liste = new OleDbDataAdapter("select  *from Satis ORDER BY UrunFiyat ASC", baglanti);
+            baglanti.Close();
             Listeleme();
 
         }

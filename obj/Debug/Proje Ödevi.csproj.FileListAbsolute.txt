@@ -41,3 +41,6 @@ C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje_Ödevi.Properties.Re
 C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje Ödevi.csproj.GenerateResource.cache
 C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje Ödevi.exe
 C:\Users\Berk\Desktop\GitHub\Yazilim_Yapimi\obj\Debug\Proje Ödevi.pdb
+C:\Users\omerk\source\repos\Proje Ödevi\Yazilim_Yapimi\obj\Debug\Proje_Ödevi.satis_frm.resources
+C:\Users\omerk\source\repos\Proje Ödevi\Yazilim_Yapimi\obj\Debug\Proje_Ödevi.satis_ist_frm.resources
+C:\Users\omerk\source\repos\Proje Ödevi\Yazilim_Yapimi\obj\Debug\Proje_Ödevi.satin_al_frm.resources

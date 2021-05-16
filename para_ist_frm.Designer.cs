@@ -49,7 +49,7 @@
             this.admin_label.Name = "admin_label";
             this.admin_label.Size = new System.Drawing.Size(136, 24);
             this.admin_label.TabIndex = 0;
-            this.admin_label.Text = "Para İstekleri;";
+            this.admin_label.Text = "Para İstekleri:";
             // 
             // cikis_btn
             // 

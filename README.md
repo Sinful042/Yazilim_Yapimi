@@ -38,5 +38,6 @@ Admin kullanıcı adı ve şifresiyle sisteme girer, admin paneli açılır ve k
 
 ![5](https://user-images.githubusercontent.com/84200869/118418991-612ab980-b6c3-11eb-88e4-679f35f6487b.png)
 
-User Story 4 için kullandığımız örnekte, alıcımız 40 kg patates almak istemektedir. Bunun için patatesi seçer, 'Ne kadar almak istiyorsunuz?' kısmına 40 yazar ve 'Satın Al' butonuna tıklar. Projemizin en havalı kısmı devreye girer ve sistem, alıcımız için en uygun fiyattan patatesi otomatik olarak satın alır.
+ User Story 4 için kullandığımız örnekte, alıcımız 40 kg patates almak istemektedir. Bunun için patatesi seçer, 'Ne kadar almak istiyorsunuz?' kısmına 40 yazar ve 'Satın Al' butonuna tıklar. Projemizin en havalı kısmı devreye girer ve sistem, alıcımız için en uygun fiyattan patatesi otomatik olarak satın alır. Şöyle ki;
+ User Story 2' yi hatırlayalım. Berk Bey 30 kg patatesini birim fiyatı 2 tl' den, Ömer Bey 10 kg patatesini birim fiyatı 5 tl'den, Betül Hanım 10 kg patatesini 7 tl'den satmak istemiştir. Sistem önce Berk Bey'in en uygun fiyattan sattığını belirler ve 30 kg patatesi satın alarak Berk Bey'e 60 tl ödeme yapar. Daha sonra kalan 10 kg patates için Ömer Bey'in daha uygun fiyattan sattığını farkederek birim fiyatı 5 tl'den 10 kg patatesi satın alır ve Ömer Bey'e 50 tl ödeme yapar. Böylece alıcımız en uygun fiyattan almak istediği patates alır ve 120 tl'sinden 10 tl artırır.
 

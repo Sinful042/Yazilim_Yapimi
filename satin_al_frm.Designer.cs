@@ -160,6 +160,7 @@
             this.lbl_para.Size = new System.Drawing.Size(53, 25);
             this.lbl_para.TabIndex = 23;
             this.lbl_para.Text = "Para";
+            this.lbl_para.Click += new System.EventHandler(this.lbl_para_Click);
             // 
             // cikisanasayfa
             // 

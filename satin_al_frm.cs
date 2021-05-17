@@ -15,7 +15,7 @@ namespace Proje_Ödevi
     {
         public string alici_kullanici_adi,satici_kullanici_adi;
         public string para;
-        int harcanan_para,total_para;
+        int harcanan_para,total_para,yenipara;
         string istek_ürün,urun_birim;
         int istek_miktar, alinan_fiyat;
         int olan_miktar,alinan_miktar;
@@ -35,17 +35,37 @@ namespace Proje_Ödevi
         {
             ana_fr ana = new ana_fr();
             ana.Kullanici_adi = alici_kullanici_adi;
-            ana.Para = para;
-            ana.Show();
-            this.Hide();
+            if(alim_gerceklesti)
+            {
+                ana.Para = total_para.ToString();
+                ana.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                ana.Para = para;
+                ana.Show();
+                this.Hide();
+            }
+          
         }
 
-        private void satin_al_frm_Load(object sender, EventArgs e)
+       private void satin_al_frm_Load(object sender, EventArgs e)
         {
-            lbl_para.Text = para;
+            
             Listeleme();
+            paraguncelle(para);
+           
         }
+        private void paraguncelle(string para)
+        {
 
+            
+            lbl_para.Text = para;
+           
+
+        }
         private void Listeleme()
         {
             baglanti.Open();
@@ -137,8 +157,14 @@ namespace Proje_Ödevi
             }
         }
 
+        private void lbl_para_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void satın_al_btn_Click(object sender, EventArgs e)
         {
+
             alim_gerceklesti = false;
             harcanan_para = 0;
             alinan_miktar = 0;
@@ -167,8 +193,9 @@ namespace Proje_Ödevi
                             istek_miktar += alinan_miktar;
                             alim_gerceklesti = true;
                             MessageBox.Show("Satın Alım Gerçekleştirilmiştir", "Tamam");
-                            textBox1.Clear();
-                            break;
+                       
+                        textBox1.Clear();
+                        break;
 
                         }
                         else
@@ -215,6 +242,7 @@ namespace Proje_Ödevi
                 {
                     urun_ekle(alici_kullanici_adi,istek_miktar.ToString(),istek_ürün,urun_birim);
                     Para_cikar(alici_kullanici_adi, harcanan_para);
+                
 
                 }
                  baglanti.Close();
@@ -261,8 +289,12 @@ namespace Proje_Ödevi
 
             }
             total_para -= para;
+            yenipara = total_para;
             OleDbCommand komut_2 = new OleDbCommand("update Kullanici set Cuzdan = '" + total_para.ToString() + "' where KullaniciAdi = '" + Kullanici_adi + "'", baglanti);
             komut_2.ExecuteNonQuery();
+
+            paraguncelle(total_para.ToString());
+
             
         }
         private void urun_ekle(string Kullanici_adi,string alinan_miktar,string urunAd,string Birim)
